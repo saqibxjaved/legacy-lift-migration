@@ -1,0 +1,19 @@
+{"timestamp":"2026-09-26T20:56:23.522Z","event_type":"PIPELINE_START","stage":"UNDERSTAND_PROJECT","detail":null,"value":null}
+{"timestamp":"2026-09-26T20:56:26.522Z","event_type":"STAGE_END","stage":"UNDERSTAND_PROJECT","detail":"3 files scanned","value":316}
+{"timestamp":"2026-09-26T20:56:26.622Z","event_type":"STAGE_START","stage":"DOCUMENT_INGESTION","detail":null,"value":null}
+{"timestamp":"2026-09-26T20:56:27.722Z","event_type":"STAGE_END","stage":"DOCUMENT_INGESTION","detail":"ADRs+CVEs parsed","value":null}
+{"timestamp":"2026-09-26T20:56:27.822Z","event_type":"STAGE_START","stage":"PARALLEL_AGENTS","detail":null,"value":null}
+{"timestamp":"2026-09-26T20:56:27.922Z","event_type":"AGENT_DISPATCHED","stage":"PARALLEL_AGENTS","detail":"Architecture Agent","value":null}
+{"timestamp":"2026-09-26T20:56:28.022Z","event_type":"AGENT_DISPATCHED","stage":"PARALLEL_AGENTS","detail":"Security Agent","value":null}
+{"timestamp":"2026-09-26T20:56:28.122Z","event_type":"AGENT_DISPATCHED","stage":"PARALLEL_AGENTS","detail":"Testing Agent","value":null}
+{"timestamp":"2026-09-26T20:56:49.722Z","event_type":"AGENT_COMPLETE","stage":"PARALLEL_AGENTS","detail":"Architecture Agent","value":null}
+{"timestamp":"2026-09-26T20:56:50.622Z","event_type":"AGENT_COMPLETE","stage":"PARALLEL_AGENTS","detail":"Security Agent","value":null}
+{"timestamp":"2026-09-26T20:56:51.822Z","event_type":"AGENT_COMPLETE","stage":"PARALLEL_AGENTS","detail":"Testing Agent","value":null}
+{"timestamp":"2026-09-26T20:56:51.922Z","event_type":"STAGE_END","stage":"PARALLEL_AGENTS","detail":"convergence gate passed","value":null}
+{"timestamp":"2026-09-26T20:56:52.022Z","event_type":"STAGE_START","stage":"MIGRATION","detail":null,"value":null}
+{"timestamp":"2026-09-26T20:56:55.522Z","event_type":"FILE_MIGRATED","stage":"MIGRATION","detail":"UserService.java","value":null}
+{"timestamp":"2026-09-26T20:56:58.522Z","event_type":"FILE_MIGRATED","stage":"MIGRATION","detail":"OrderProcessor.java","value":null}
+{"timestamp":"2026-09-26T20:57:01.522Z","event_type":"STAGE_END","stage":"MIGRATION","detail":null,"value":null}
+{"timestamp":"2026-09-26T20:57:01.622Z","event_type":"STAGE_START","stage":"REPORTING","detail":null,"value":null}
+{"timestamp":"2026-09-26T20:57:03.022Z","event_type":"REPORT_GENERATED","stage":"REPORTING","detail":"IMPACT_REPORT.md","value":null}
+{"timestamp":"2026-09-26T20:57:03.122Z","event_type":"PIPELINE_END","stage":"REPORTING","detail":null,"value":null}

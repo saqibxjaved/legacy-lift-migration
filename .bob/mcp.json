@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "legacylift-mcp": {
+      "command": "node",
+      "args": ["${workspaceFolder}/mcp-server/build/index.js"]
+    }
+  }
+}

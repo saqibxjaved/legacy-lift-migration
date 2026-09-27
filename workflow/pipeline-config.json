@@ -1,0 +1,66 @@
+{
+  "pipeline": {
+    "name": "java-monolith-to-python",
+    "version": "2.0.0"
+  },
+  "source": {
+    "language": "java",
+    "root_dir": "demo/java-source",
+    "extension": ".java",
+    "exclude_patterns": ["**/target/**", "**/.gradle/**"]
+  },
+  "target": {
+    "language": "python",
+    "output_dir": "demo/expected_output",
+    "test_output_dir": "demo/expected_output/tests"
+  },
+  "document_ingestion": {
+    "enabled": true,
+    "docs_dir": "demo/project-docs",
+    "enforce_adr_constraints": true,
+    "block_on_critical_cve": true
+  },
+  "parallel_agents": {
+    "enabled": true,
+    "agents": [
+      { "name": "Architecture Agent", "prompt": "agents/architecture-agent.md" },
+      { "name": "Security Agent",     "prompt": "agents/security-agent.md"     },
+      { "name": "Testing Agent",      "prompt": "agents/testing-agent.md"      }
+    ],
+    "convergence_gate": {
+      "block_on_p0_security": true,
+      "block_on_circular_deps": true,
+      "warn_on_low_test_coverage": true,
+      "min_baseline_test_pass_rate": 0.6
+    }
+  },
+  "validation": {
+    "run_static_analysis": true,
+    "run_tests": true,
+    "compare_behavior": false,
+    "fail_on_regression": true,
+    "min_test_pass_rate": 0.8
+  },
+  "impact_tracking": {
+    "enabled": true,
+    "log_file": "pipeline-run.log",
+    "impact_report_output": "IMPACT_REPORT.md",
+    "manual_baseline_hrs_per_kloc": 8,
+    "manual_baseline_min_per_test": 2,
+    "manual_baseline_security_hrs_per_file": 1
+  },
+  "mcp_server": {
+    "command": "node",
+    "args": ["mcp-server/build/index.js"]
+  },
+  "agents": {
+    "migration_agent_prompt": "agents/migration-agent.md",
+    "test_generator_agent_prompt": "agents/testing-agent.md",
+    "validator_agent_prompt": "agents/validator-agent.md"
+  },
+  "reporting": {
+    "modernization_report": "MODERNIZATION_REPORT.md",
+    "impact_report": "IMPACT_REPORT.md",
+    "verbose": true
+  }
+}

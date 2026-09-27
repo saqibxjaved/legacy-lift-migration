@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  user-service:
+    build:
+      context: .
+      dockerfile: Dockerfile.user-service
+    ports:
+      - "8001:8001"
+  order-service:
+    build:
+      context: .
+      dockerfile: Dockerfile.order-service
+    ports:
+      - "8002:8002"

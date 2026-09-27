@@ -1,0 +1,9 @@
+# Test runner
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Static analysis
+pylint>=3.0.0
+
+# Type checking support
+mypy>=1.7.0
